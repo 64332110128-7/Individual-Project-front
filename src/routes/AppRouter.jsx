@@ -16,6 +16,8 @@ const guestRouter = createBrowserRouter([
     ),
     children: [
       { index: true, element: <LoginForm /> },
+      { path: "/", element: <UserHome /> },
+      { path: "/login", element: <LoginForm /> },
       { path: "/register", element: <RegisterForm /> },
     ],
   },
@@ -32,7 +34,7 @@ const userRouter = createBrowserRouter([
     ),
     children: [
       { index: true, element: <UserHome /> },
-      // { path: '/new', element: <NewTodoForm />}
+      { path: true ? "/login" : null, element: <UserHome /> },
     ],
   },
 ]);

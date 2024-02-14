@@ -43,7 +43,7 @@ export default function RegisterForm() {
   };
 
   const hdlLogin = () => {
-    window.location.href = "/";
+    window.location.href = "/login";
   };
 
   return (

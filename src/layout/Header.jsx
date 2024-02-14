@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const guestNav = [
-  { to: "/", text: "Login" },
+  { to: "/", text: "home" },
+  { to: "/login", text: "Login" },
   { to: "/register", text: "Register" },
 ];
 
@@ -22,9 +23,9 @@ export default function Header() {
   return (
     <div className="navbar bg-[#BFBFC8] text-[#161A30]">
       <div className="LOGO flex-1">
-        <a className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost text-xl">
           LOGO, {user?.id ? user.firstName : "Guest"}
-        </a>
+        </Link>
       </div>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
