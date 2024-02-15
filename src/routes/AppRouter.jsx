@@ -4,6 +4,7 @@ import RegisterForm from "../layout/RegisterForm";
 import useAuth from "../hooks/useAuth";
 import Header from "../layout/Header";
 import UserHome from "../layout/UserHome";
+import ProductDetails from "../components/ProductDetails";
 
 const guestRouter = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const userRouter = createBrowserRouter([
     children: [
       { index: true, element: <UserHome /> },
       { path: true ? "/login" : null, element: <UserHome /> },
+      { path: "/product/:id", element: <ProductDetails /> },
     ],
   },
 ]);
