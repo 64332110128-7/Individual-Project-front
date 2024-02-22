@@ -9,9 +9,22 @@ const guestNav = [
 
 const userNav = [{ to: "/", text: "Home" }];
 
+const adminNav = [
+  { to: "/", text: "Home " },
+  { to: "/admin/product", text: "Create Product" },
+  // { to: "/admin/product/:productId", text: "Update Product" },
+  { to: "/admin/collection", text: "Create Collection" },
+  { to: "/admin/brand", text: "Create Brand" },
+  { to: "/admin/series", text: "Create Series" },
+];
+
 export default function Header() {
   const { user, logout } = useAuth();
-  const finalNav = user?.id ? userNav : guestNav;
+  const finalNav = !user?.id
+    ? guestNav
+    : user.role === "ADMIN"
+    ? adminNav
+    : userNav;
 
   const navigate = useNavigate();
 

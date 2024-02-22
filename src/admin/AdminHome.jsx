@@ -1,10 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
-// import Modal from "../components/Modal";
+import AdminProductCard from "./AdminProductCard";
 
-export default function UserHome() {
+export default function AdminHome() {
   const [products, setProducts] = useState([]);
   const [editIdx, setEditIdx] = useState(-1);
   const [trigger, setTrigger] = useState(false);
@@ -22,10 +21,14 @@ export default function UserHome() {
 
   return (
     <>
-      <h2 className="text-3xl text-center mt-8">Product</h2>
-      <div className="flex flex-row gap-3 items-center p-3">
+      <h2 className="text-3xl text-center mt-8">Admin Product</h2>
+      <div className="flex-row gap-3 items-center p-3 grid grid-cols-6">
         {products.map((el) => (
-          <ProductCard key={el.id} el={el} />
+          <AdminProductCard
+            key={el.id}
+            el={el}
+            setTrigger={setTrigger}
+          />
         ))}
       </div>
     </>

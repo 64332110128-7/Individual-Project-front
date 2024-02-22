@@ -5,13 +5,14 @@ import { useParams } from "react-router-dom";
 export default function ProductDetails() {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
+
   useEffect(() => {
     const run = async () => {
       let token = localStorage.getItem("token");
-      const response = await axios.get(`http://localhost:8000/product/${id}`, {
+      const rs = await axios.get(`http://localhost:8000/product/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setProduct(response.data.product);
+      setProduct(rs.data.product);
     };
 
     run();
@@ -35,7 +36,6 @@ export default function ProductDetails() {
           <h2 className="text-3xl font-semibold text-gray-800 mb-2">
             {product.name}
           </h2>
-          <p className="text-lg text-gray-700 mb-4">{product.detail}</p>
           <p className="text-2xl font-semibold text-gray-900 mb-4">
             {product.price} THB
           </p>
