@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateProduct() {
+  const navigate = useNavigate();
   const [status, setStatus] = useState([]);
   const [brand, setBrand] = useState([]);
   const [collection, setCollection] = useState([]);
@@ -85,12 +87,11 @@ export default function CreateProduct() {
         }
       );
       alert("Create new product ok!");
+      navigate("/");
     } catch (err) {
       console.log(err.message);
     }
   };
-
-  console.log(input);
 
   return (
     <form
@@ -197,6 +198,9 @@ export default function CreateProduct() {
           value={input.status_product}
           onChange={hdlChange}
         >
+          <option value="" disabled>
+            Select status...
+          </option>
           {status.map((el) => (
             <option key={el} value={el}>
               {el}
@@ -212,6 +216,9 @@ export default function CreateProduct() {
           value={input.brandId}
           onChange={hdlChange}
         >
+          <option value="" disabled>
+            Select Brand...
+          </option>
           {brand.map((el) => (
             <option key={el.id} value={el.id}>
               {el.name}
@@ -227,6 +234,9 @@ export default function CreateProduct() {
           value={input.collectionId}
           onChange={hdlChange}
         >
+          <option value="" disabled>
+            Select Collection...
+          </option>
           {collection.map((el) => (
             <option key={el.id} value={el.id}>
               {el.name}
@@ -242,6 +252,9 @@ export default function CreateProduct() {
           value={input.seriesId}
           onChange={hdlChange}
         >
+          <option value="" disabled>
+            Select Series...
+          </option>
           {series.map((el) => (
             <option key={el.id} value={el.id}>
               {el.name}

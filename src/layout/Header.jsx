@@ -12,10 +12,10 @@ const userNav = [{ to: "/", text: "Home" }];
 const adminNav = [
   { to: "/", text: "Home " },
   { to: "/admin/product", text: "Create Product" },
-  // { to: "/admin/product/:productId", text: "Update Product" },
   { to: "/admin/collection", text: "Create Collection" },
   { to: "/admin/brand", text: "Create Brand" },
   { to: "/admin/series", text: "Create Series" },
+  { to: "/auth/me", text: "Profile" },
 ];
 
 export default function Header() {

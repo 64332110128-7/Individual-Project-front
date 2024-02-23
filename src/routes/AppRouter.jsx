@@ -11,6 +11,10 @@ import CreateCollection from "../admin/CreateCollection";
 import CreateBrand from "../admin/CreateBrand";
 import CreateSeries from "../admin/CreateSeries";
 import AdminHome from "../admin/AdminHome";
+import Profile from "../layout/Profile";
+import Address from "../layout/Address";
+import CreateAddress from "../components/CreateAddress";
+import UpdateAddress from "../components/UpdateAddress";
 
 const guestRouter = createBrowserRouter([
   {
@@ -43,6 +47,7 @@ const userRouter = createBrowserRouter([
       { index: true, element: <UserHome /> },
       { path: "/login", element: <UserHome /> },
       { path: "/product/:id", element: <ProductDetails /> },
+      { path: "/auth/me", element: <Profile /> },
     ],
   },
 ]);
@@ -64,6 +69,10 @@ const adminRouter = createBrowserRouter([
       { path: "/admin/brand", element: <CreateBrand /> },
       { path: "/admin/series", element: <CreateSeries /> },
       { path: "/product/:id", element: <ProductDetails /> },
+      { path: "/auth/me", element: <Profile /> },
+      { path: "/customer/allAddress", element: <Address /> },
+      { path: "/customer/address", element: <CreateAddress /> },
+      { path: "/customer/address/:id", element: <UpdateAddress /> },
     ],
   },
 ]);

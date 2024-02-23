@@ -21,14 +21,16 @@ export default function AdminHome() {
 
   return (
     <>
+      <img
+        src="\src\assets\banner.jpg"
+        alt="Banner Image"
+        className="w-full h-auto max-w-full"
+      />
+
       <h2 className="text-3xl text-center mt-8">Admin Product</h2>
       <div className="flex-row gap-3 items-center p-3 grid grid-cols-6">
         {products.map((el) => (
-          <AdminProductCard
-            key={el.id}
-            el={el}
-            setTrigger={setTrigger}
-          />
+          <AdminProductCard key={el.id} el={el} setTrigger={setTrigger} />
         ))}
       </div>
     </>

@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 export default function UpdateProduct() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [status, setStatus] = useState([]);
   const [brand, setBrand] = useState([]);
@@ -84,8 +85,6 @@ export default function UpdateProduct() {
       e.preventDefault();
       const output = { ...input };
       const token = localStorage.getItem("token");
-      // console.log(id + "a");
-      // console.log(product.id + "a");
 
       const rs = await axios.patch(
         `http://localhost:8000/admin/product/${id}`,
@@ -98,6 +97,7 @@ export default function UpdateProduct() {
       );
 
       alert("Update product ok!");
+      navigate("/");
     } catch (err) {
       console.log(err.message);
     }
