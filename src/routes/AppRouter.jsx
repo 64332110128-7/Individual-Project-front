@@ -15,6 +15,7 @@ import Profile from "../layout/Profile";
 import Address from "../layout/Address";
 import CreateAddress from "../components/CreateAddress";
 import UpdateAddress from "../components/UpdateAddress";
+import Cart from "../layout/Cart";
 
 const guestRouter = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const userRouter = createBrowserRouter([
       { path: "/login", element: <UserHome /> },
       { path: "/product/:id", element: <ProductDetails /> },
       { path: "/auth/me", element: <Profile /> },
+      { path: "/customer/myAddress", element: <Address /> },
+      { path: "/customer/address", element: <CreateAddress /> },
+      { path: "/customer/address/:id", element: <UpdateAddress /> },
+      { path: "/cart", element: <Cart /> },
     ],
   },
 ]);
@@ -70,9 +75,10 @@ const adminRouter = createBrowserRouter([
       { path: "/admin/series", element: <CreateSeries /> },
       { path: "/product/:id", element: <ProductDetails /> },
       { path: "/auth/me", element: <Profile /> },
-      { path: "/customer/allAddress", element: <Address /> },
+      { path: "/customer/myAddress", element: <Address /> },
       { path: "/customer/address", element: <CreateAddress /> },
       { path: "/customer/address/:id", element: <UpdateAddress /> },
+      { path: "/cart", element: <Cart /> },
     ],
   },
 ]);

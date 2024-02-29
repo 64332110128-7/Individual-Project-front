@@ -16,8 +16,8 @@ export default function AdminProductCard({ el, setTrigger }) {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      console.log(rs);
-      window.location.reload();
+      // console.log(rs);
+      setTrigger(true);
     } catch (err) {
       console.log(err.message);
     }

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateAddress() {
+  const navigate = useNavigate();
   const [input, setInput] = useState({
     firstName: "",
     lastName: "",
@@ -48,6 +50,7 @@ export default function CreateAddress() {
         }
       );
       alert("Create new Address ok!");
+      navigate("/customer/myAddress");
     } catch (err) {
       console.log(err.message);
     }

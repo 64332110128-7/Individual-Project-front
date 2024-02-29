@@ -18,7 +18,8 @@ export default function UpdateAddress() {
     subDistrict: "",
     isMainAddress: "",
   });
-  console.log(id);
+  // console.log(id);
+  // console.log(useParams());
   console.log(input);
   useEffect(() => {
     const run = async () => {

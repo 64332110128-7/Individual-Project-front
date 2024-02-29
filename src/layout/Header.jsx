@@ -7,7 +7,11 @@ const guestNav = [
   { to: "/register", text: "Register" },
 ];
 
-const userNav = [{ to: "/", text: "Home" }];
+const userNav = [
+  { to: "/", text: "Home" },
+  { to: "/cart", text: "Cart" },
+  { to: "/auth/me", text: "Profile" },
+];
 
 const adminNav = [
   { to: "/", text: "Home " },
@@ -15,6 +19,7 @@ const adminNav = [
   { to: "/admin/collection", text: "Create Collection" },
   { to: "/admin/brand", text: "Create Brand" },
   { to: "/admin/series", text: "Create Series" },
+  { to: "/cart", text: "Cart" },
   { to: "/auth/me", text: "Profile" },
 ];
 

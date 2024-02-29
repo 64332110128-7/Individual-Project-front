@@ -2,7 +2,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/productCard";
-// import Modal from "../components/Modal";
 
 export default function UserHome() {
   const [products, setProducts] = useState([]);
@@ -22,9 +21,14 @@ export default function UserHome() {
 
   return (
     <>
-      <img src={"../assets/banner.jpg"} alt="Banner Image" />
+      <img
+        src="\src\assets\banner.jpg"
+        alt="Banner Image"
+        className="w-full h-auto max-w-full"
+      />
+
       <h2 className="text-3xl text-center mt-8">Product</h2>
-      <div className="flex flex-row gap-3 items-center p-3">
+      <div className="flex-row gap-3 items-center p-3 grid grid-cols-6">
         {products.map((el) => (
           <ProductCard key={el.id} el={el} />
         ))}
