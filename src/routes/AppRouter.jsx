@@ -16,6 +16,10 @@ import Address from "../layout/Address";
 import CreateAddress from "../components/CreateAddress";
 import UpdateAddress from "../components/UpdateAddress";
 import Cart from "../layout/Cart";
+import Order from "../layout/Order";
+import UserOrder from "../layout/UserOrder";
+import Favorite from "../layout/Favorite";
+import Search from "../layout/Search";
 
 const guestRouter = createBrowserRouter([
   {
@@ -31,6 +35,7 @@ const guestRouter = createBrowserRouter([
       { path: "/", element: <UserHome /> },
       { path: "/login", element: <LoginForm /> },
       { path: "/register", element: <RegisterForm /> },
+      { path: "/product", element: <Search /> },
     ],
   },
 ]);
@@ -52,7 +57,11 @@ const userRouter = createBrowserRouter([
       { path: "/customer/myAddress", element: <Address /> },
       { path: "/customer/address", element: <CreateAddress /> },
       { path: "/customer/address/:id", element: <UpdateAddress /> },
+      { path: "/myFavorite", element: <Favorite /> },
       { path: "/cart", element: <Cart /> },
+      { path: "/order", element: <Order /> },
+      { path: "/product", element: <Search /> },
+      { path: "/customer/order", element: <UserOrder /> },
     ],
   },
 ]);
@@ -68,6 +77,7 @@ const adminRouter = createBrowserRouter([
     ),
     children: [
       { index: true, element: <AdminHome /> },
+      { path: "/login", element: <AdminHome /> },
       { path: "/admin/product", element: <CreateProduct /> },
       { path: "/admin/product/:id", element: <UpdateProduct /> },
       { path: "/admin/collection", element: <CreateCollection /> },
@@ -78,7 +88,11 @@ const adminRouter = createBrowserRouter([
       { path: "/customer/myAddress", element: <Address /> },
       { path: "/customer/address", element: <CreateAddress /> },
       { path: "/customer/address/:id", element: <UpdateAddress /> },
+      { path: "/myFavorite", element: <Favorite /> },
+      { path: "/product", element: <Search /> },
       { path: "/cart", element: <Cart /> },
+      { path: "/order", element: <Order /> },
+      { path: "/customer/order", element: <UserOrder /> },
     ],
   },
 ]);

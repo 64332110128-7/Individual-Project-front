@@ -23,7 +23,7 @@ export default function RegisterForm() {
         return alert("Please check confirm password");
       }
       const rs = await axios.post("http://localhost:8000/auth/register", input);
-      console.log(rs);
+      // console.log(rs);
       if (rs.status === 200) {
         alert("Register Successful");
       }

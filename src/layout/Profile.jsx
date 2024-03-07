@@ -41,30 +41,11 @@ export default function Profile() {
               address
             </p>
           </Link>
-          <a
-            href="#"
-            className="py-2 px-4 bg-gray-200 text-gray-800 hover:bg-gray-300"
-          >
-            เมนู 3
-          </a>
-          <a
-            href="#"
-            className="py-2 px-4 bg-gray-200 text-gray-800 hover:bg-gray-300"
-          >
-            เมนู 4
-          </a>
-          <a
-            href="#"
-            className="py-2 px-4 bg-gray-200 text-gray-800 hover:bg-gray-300"
-          >
-            เมนู 5
-          </a>
-          <a
-            href="#"
-            className="py-2 px-4 bg-gray-200 text-gray-800 hover:bg-gray-300"
-          >
-            เมนู 6
-          </a>
+          <Link to="/customer/order">
+            <p className="py-2 px-4 bg-gray-200 text-gray-800 hover:bg-gray-300">
+              Orders
+            </p>
+          </Link>
         </div>
         <div className="mt-8 ml-10">
           <div className="text-3xl font-bold text-left">{user.firstName}</div>

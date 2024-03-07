@@ -14,7 +14,6 @@ export default function CreateSeries() {
   const hdlSubmit = async (e) => {
     try {
       e.preventDefault();
-      // const output = { ...input };
       const token = localStorage.getItem("token");
       const rs = await axios.post("http://localhost:8000/admin/series", input, {
         headers: { Authorization: `Bearer ${token}` },

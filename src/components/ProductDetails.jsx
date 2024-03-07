@@ -47,6 +47,22 @@ export default function ProductDetails() {
     }
   };
 
+  const hdlAddToFavorite = async () => {
+    try {
+      let token = localStorage.getItem("token");
+      const rs = await axios.post(
+        `http://localhost:8000/customer/favorite/${user.id}/${id}`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      alert("Product added to favorites successfully");
+    } catch (err) {
+      console.error("Error adding product to favorites:", err);
+    }
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -65,6 +81,12 @@ export default function ProductDetails() {
           <h2 className="text-3xl font-semibold text-gray-800 mb-2">
             {product.name}
           </h2>
+          <button
+            className="bg-indigo-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+            onClick={hdlAddToFavorite}
+          >
+            Favorite
+          </button>
           <div className="mt-8">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">
               Specifications

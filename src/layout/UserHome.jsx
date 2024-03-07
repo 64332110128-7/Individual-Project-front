@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ProductCard from "../components/productCard";
 
 export default function UserHome() {
   const [products, setProducts] = useState([]);
-  const [editIdx, setEditIdx] = useState(-1);
   const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
@@ -24,7 +22,7 @@ export default function UserHome() {
       <img
         src="\src\assets\banner.jpg"
         alt="Banner Image"
-        className="w-full h-auto max-w-full"
+        className="w-1000 h-auto max-w-full object-cover mx-auto block"
       />
 
       <h2 className="text-3xl text-center mt-8">Product</h2>

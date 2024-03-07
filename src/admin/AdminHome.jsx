@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import AdminProductCard from "./AdminProductCard";
 
 export default function AdminHome() {
   const [products, setProducts] = useState([]);
-  const [editIdx, setEditIdx] = useState(-1);
   const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {

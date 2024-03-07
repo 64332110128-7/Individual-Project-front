@@ -20,6 +20,9 @@ export default function ProductCard({ el }) {
             <h2 className="text-center card-title focus:text-red-300">
               {el.name}
             </h2>
+            <p className="text-center bg-indigo-500 rounded-lg text-white">
+              {el.price} THB
+            </p>
           </div>
         </div>
       </Link>
